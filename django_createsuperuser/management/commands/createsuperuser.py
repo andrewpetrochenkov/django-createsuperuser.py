@@ -3,12 +3,11 @@ from django.contrib.auth.management.commands import createsuperuser
 from django.core.management import CommandError
 
 """
+settings.py:
+INSTALLED_APPS+= ["django_createsuperuser"]
+
 python manage.py createsuperuser --username admin --password admin
 python manage.py createsuperuser --username admin --password admin --email foo@foo.foo
-
-settings.py:
-if DEBUG:
-    INSTALLED_APPS = ["django_createsuperuser"]+INSTALLED_APPS
 """
 
 class Command(createsuperuser.Command):
