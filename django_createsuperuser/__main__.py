@@ -26,7 +26,7 @@ def _cli(username,password,email=None):
         user = User.objects.get(username=username)
         user.set_password(password)
     except User.DoesNotExist:
-        user, created = User.objects.create_user(username, password=password)
+        user = User.objects.create_user(username, password=password)
     if email:
         user.email = email
     user.is_superuser=True
